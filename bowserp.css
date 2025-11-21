@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f1031 url("Bowser/Fondo.png") no-repeat center center / cover;
+  color: white;
+  overflow-x: hidden;
+}
+
+.escena {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#layer1, #layer2, #layer3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+#layer1 { z-index: 1; }
+#layer2 { z-index: 2; }
+#layer3 { z-index: 3; }
+
+
+
+.base {
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  width: 50%;
+}
+
+.bowser {
+  position: absolute;
+  bottom: 50%;   
+  left: 33%;    
+  width: 35%;  
+}
+
+
+.notas {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 15%;
+}
+.contenido {
+  max-width: 800px; 
+  margin: 200px auto 0 auto;  
+  text-align: center; 
+  color: #fff; 
+  background-color: rgba(15, 16, 49, 0.8); /* fondo oscuro semitransparente */
+  border-radius: 15px; /* bordes suaves */
+}
+
+/* 💻 Computadora */
+@media (min-width: 1024px) {
+  .base {
+    margin-top: 100px;
+    width: 55%;
+    left: 20%;
+  }
+  .bowser {
+    width: 30%;
+    bottom: 45%;
+    left: 35%;
+  }
+  .notas {
+    width: 25%;
+  }
+}
+
+/* 📱 Tablet */
+@media (min-width: 720px) and (max-width: 1024px) {
+    .base {
+    bottom: 10%;
+    left: 10%;
+    width: 80%;
+    }
+  .bowser {
+    width: 35%;
+    bottom: 55%;
+    left: 35%;
+  }
+  .notas {
+    width: 25%;
+  }
+}
+
+/* 📱 Celular */
+@media (max-width: 720px) {
+  .base {
+    width: 80%;
+    bottom: 25%;
+    left: 10%;
+  }
+  .bowser {
+    width: 50%;
+    bottom: 45%;
+    left: 25%;
+  }
+  .notas {
+    width: 25%;
+    top: 25%;
+    left: 8%;
+  }
+  .contenido {
+    margin-top: 3vh; /* menos espacio en pantallas pequeñas */
+  }
+}

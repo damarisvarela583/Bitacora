@@ -1,0 +1,455 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Variables */
+@property --colorPrincipal {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #0716AF;
+}
+@property --colorFondo {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f9f9f9;
+}
+@property --tamTitulo {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 36px;
+}
+@property --maria {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ED217C;
+}
+@property --tamaño {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 28px;
+}
+
+/* Generales */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--colorFondo);
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  margin: 40px auto 20px;
+}
+
+header .info {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--tamTitulo);
+  color: var(--colorPrincipal);
+  margin: 10px 0;
+}
+
+h2 {
+  color: var(--colorPrincipal);
+  margin-top: 25px;
+}
+
+/* Navbar */
+nav {
+  background-color: var(--colorPrincipal);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #FFD43B;
+  transition: width 0.3s ease;
+  margin: auto;
+}
+
+nav ul li a:hover {
+  color: #FFD43B;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Contenedor */
+.contenedor {
+  width: 80%;
+  max-width: 900px;
+  background: #fff;
+  padding: 25px;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Párrafos */
+.contenedor p {
+  margin: 18px 0;
+  padding: 12px 15px;
+  background-color: #fdfaf5;
+  border-left: 4px solid var(--colorPrincipal);
+  border-radius: 6px;
+}
+
+/* Infografía */
+.infografia {
+  width: 80%; 
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.btn-canva {
+  background-color: var(--colorPrincipal);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.btn-canva:hover {
+  background-color: #FFD43B;
+  color: #0716AF;
+}
+
+/* Figma y diagramas */
+.FigmaDiseño1, .DiagramasFlujo {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+.FigmaDiseño1 img, .DiagramasFlujo img {
+  width: 100%;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Cajas con variables */
+.cards-variables {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+.caja, .cajas {
+  flex: 1;
+  max-width: 300px;
+  height: 150px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+.caja {
+  background-color: var(--maria);
+}
+.cajas {
+  background-color: blueviolet;
+}
+
+/* Máscara */
+.mascara {
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+.mascara img {
+  width: 100%;
+  -webkit-mask-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+/* Unidades relativas */
+.padre {
+  font-size: 20px;
+}
+.hijo {
+  font-size: 2em;
+  color: var(--colorPrincipal);
+}
+.remex {
+  font-size: 2rem;
+  color: #ED217C;
+}
+.vh, .vw {
+  background: linear-gradient(135deg, var(--colorPrincipal), #4f46e5);
+  color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  margin: 20px auto;
+  font-weight: bold;
+}
+.vh {
+  height: 50vh;
+  line-height: 50vh;
+}
+.vw {
+  width: 75vw;
+  padding: 30px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+.tx1 {
+  color: blueviolet; /* texto violeta */
+}
+
+.diferente {
+  font-size: 3rem; /* tamaño grande */
+}
+
+.otro {
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.4); /* sombra suave */
+}
+.contenedor img {
+  max-width: 100%;   /* se ajusta al ancho del contenedor */
+  height: auto;      /* mantiene proporción */
+  display: block;    /* elimina espacios extra */
+  margin: 15px auto; /* centra la imagen */
+  border-radius: 12px; /* opcional: esquinas redondeadas */
+}
+
+.contenedordisplay {
+  width: 900px;
+  height: 400px;
+  display: flex; /*activar flexbox*/
+  flex-direction: row; /*centrar elementos vertical y horizontal (adaptativos)*/
+  justify-content: center; /*centrar imagenes horizontalmente*/
+  align-items: center; /*las centra verticalmente*/
+  width: 80%;
+  height: 500px;
+  background-color: blue;
+}
+.elem{
+  padding: 15;
+  margin: 10px;
+}
+.contenedordisplay img{
+  height: 100%;
+  width: 15vw;
+}
+
+    /* ===== Banner de Cookies ===== */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(20, 20, 20, 0.95);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 15px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+
+    #cookie-banner p {
+      margin: 0;
+      max-width: 700px;
+    }
+
+    #cookie-banner button {
+      background-color: #5A189A;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    #cookie-banner button:hover {
+      background-color: #7B2CBF;
+    }
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contenedor {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .btn-canva {
+    width: 100%;
+  }
+
+  .cards-variables {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .caja, .cajas {
+    max-width: 100%;
+    height: 120px;
+  }
+}
+
+/* Tablet (entre 601px y 1023px) */
+@media (min-width: 601px) and (max-width: 1023px) {
+  nav ul {
+    gap: 1.5rem;
+  }
+
+  .contenedor {
+    width: 85%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .cards-variables {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .caja, .cajas {
+    flex: 1 1 calc(50% - 20px);
+    max-width: 45%;
+    height: 140px;
+  }
+}
+
+/* PC (desde 1024px en adelante) */
+@media (min-width: 1024px) {
+  nav ul {
+    gap: 3rem;
+  }
+
+  .contenedor {
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .cards-variables {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .caja, .cajas {
+    max-width: 300px;
+    height: 150px;
+  }
+}
